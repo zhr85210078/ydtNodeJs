@@ -1,0 +1,8 @@
+.vscode
+bower_components
+build
+dist
+launch
+node_modules
+routes
+debug.log
