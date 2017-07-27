@@ -13,7 +13,7 @@
 |`npm uninstall jade --save`|删除jade模板|
 |`npm install nunjucks --save`|安装nunjucks模板|
 |`npm install log4js --save`|安装打印log插件|
-|Create a new file `.bowerrc` -->`{"directory": "bower_components"}`|创建.bowerrc文件|
+|Create a new file `.bowerrc`|创建.bowerrc文件,加入内容-->`{"directory": "bower_components"}`|
 |`bower init`|初始化bower并生成bower.json| 
 |`bower install jquery --save`|下载jquery|    
 |`bower install bootstrap --save`|下载bootstrap|
