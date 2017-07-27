@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 ydtnodejs
 
+=======
+>>>>>>> feb0b2d100d716f5166beb757ba7ef0c6455475f
 express ydt                                 //创建目录
 
 npm update                                  //初始化npm项目插件       
@@ -13,7 +16,7 @@ npm install log4js --save                   //安装打印log插件
 Create a new file " .bowerrc "              //创建.bowerrc文件
 
 {
-    "directory": "bower_components"         
+    "directory": "bower_components"
 }
 
 bower init                                  //初始化bower并生成bower.json        
