@@ -11,9 +11,7 @@ npm install log4js --save                   //安装打印log插件
 Create a new file " .bowerrc "              //创建.bowerrc文件
 
 {
-
-    "directory": "bower_components"         
-    
+    "directory": "bower_components"
 }
 
 bower init                                  //初始化bower并生成bower.json        
