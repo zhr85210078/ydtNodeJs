@@ -1,3 +1,5 @@
+![][ydt-logo]
+
 express ydt                                 //创建目录
 
 npm update                                  //初始化npm项目插件       
@@ -43,3 +45,7 @@ npm install --save-dev gulp-zip             //安装gulp-zip本地资源文件�
 npm install --save-dev gulp-ftp             //安装gulp-ftp本地资源文件上传到服务器插件
 
 npm install moment --save-dev               //安装moment获取当前时间插件
+
+
+--------------------------------
+[ydt-logo]:https://github.com/zhr85210078/ydtNodeJs/blob/master/src/img/logo.png
