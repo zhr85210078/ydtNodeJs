@@ -2,10 +2,8 @@
 
 ![][ydt-logo]
 
-****
 ### Author:horan
 ### E-mail:zhr85210078@163.com
-****
 
 ### 搭建项目
 |操作|说明|
