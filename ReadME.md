@@ -21,7 +21,7 @@
 |`bower install angular-route --save`|下载angular-route|    
 |`bower install wangEditor --save`|下载wangEditor富文本编辑器| 
 |`bower install gulp --save`|安装gulp前端自动化构建工具| 
-|Create a new file `gulpfile.js`|创建.bowerrc文件|
+|Create a new file `gulpfile.js`|创建gulpfile.js文件,这里是写gulp任务|
 |`npm install gulp-nodemon --save-dev`|安装gulp-nodemon项目启动插件|
 |`npm install browser-sync gulp --save-dev`|安装browser-sync项目监控插件|
 |`npm install gulp-clean --save-dev`|安装gulp-clean文件清除插件|
