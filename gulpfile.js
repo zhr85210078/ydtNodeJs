@@ -94,12 +94,14 @@ gulp.task('htmlmin', function () {
 gulp.task('build', ['jsmin','cssmin','htmlmin'], function () {
         return gulp.src([
             'bin*/**/*',
+            'launch*/*',//iisnode执行目录,目录必须有读写创建文件的权限
             'config*/**/*',
             'logs*/**/*',
             'src*/img/*',
             'src*/lib/**/*',
             'app.js',
-            'package.json'
+            'package.json',
+            'web.config'//iisnode配置文件
         ])
         .pipe(gulp.dest(app.buildPath))
         .pipe(reload({ stream: true }));
