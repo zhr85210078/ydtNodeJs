@@ -10,8 +10,8 @@ var log=require('./config/logConfig');
 // var users = require('./routes/users');
 
 var app = express();
-app.locals.appname = package.name;
-app.locals.version = package.version;
+app.locals.appname = package.name;//项目名称
+app.locals.version = package.version;//项目版本号
 
 nunjucks.configure(path.join(__dirname, 'views'), {
     autoescape: true,

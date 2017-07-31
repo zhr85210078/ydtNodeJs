@@ -29,6 +29,9 @@
 |`npm install gulp-zip --save-dev`|安装gulp-zip本地资源文件压缩插件|
 |`npm install gulp-ftp --save-dev`|安装gulp-ftp本地资源文件上传到服务器插件|
 |`npm install moment --save-dev`|安装moment获取当前时间插件|
-
+|`npm install gulp-uglify --save-dev`|安装gulp-uglify压缩js插件|
+|`npm install gulp-minify-css --save-dev`|安装gulp-minify-css压缩css插件|
+|`npm install gulp-make-css-url-version --save-dev`|安装gulp-make-css-url-version给css文件引用URL加版本号插件|
+|`npm install gulp-htmlmin --save-dev`|安装gulp-htmlmin压缩html插件|
 
 [ydt-logo]:https://github.com/zhr85210078/ydtNodeJs/blob/master/src/img/logo.png
