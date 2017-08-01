@@ -1,0 +1,95 @@
+{% extends "layout.html" %} 
+
+{% block head %}
+<title>Login</title>
+<base href="/Login" /> 
+<link href="src/lib/animate.css/animate.min.css" rel="stylesheet">
+<link href="src/lib/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+{% endblock %} 
+
+{% block content %}
+<div class="login-content">
+    <!-- Login -->
+    <div class="lc-block" id="l-login">
+        <div class="input-group m-b-20">
+            <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+            <div class="fg-line">
+                <input type="text" id="EmailAddressInput" class="form-control" placeholder="用户名">
+            </div>
+        </div>
+        <div class="input-group m-b-20">
+            <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
+            <div class="fg-line">
+                <input type="password" id="PasswordInput" class="form-control" placeholder="密码">
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" id="RememberMeInput">
+                <i class="input-helper"></i>
+                记住我
+            </label>
+        </div>
+        <a href="" id="LoginButton" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
+        <ul class="login-navigation">
+            <li data-block="#l-register" class="bgm-red">注册</li>
+            <li data-block="#l-forget-password" class="bgm-orange">忘记密码?</li>
+        </ul>
+    </div>
+    <!-- Register -->
+    <div class="lc-block" id="l-register">
+        <div class="input-group m-b-20">
+            <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+            <div class="fg-line">
+                <input type="text" class="form-control" placeholder="用户名">
+            </div>
+        </div>
+        <div class="input-group m-b-20">
+            <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
+            <div class="fg-line">
+                <input type="text" class="form-control" placeholder="邮箱">
+            </div>
+        </div>
+        <div class="input-group m-b-20">
+            <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
+            <div class="fg-line">
+                <input type="password" class="form-control" placeholder="密码">
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="">
+                <i class="input-helper"></i>
+                同意协议
+            </label>
+        </div>
+        <a href="" id="registerButton" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
+        <ul class="login-navigation">
+            <li data-block="#l-login" class="bgm-green">登录</li>
+            <li data-block="#l-forget-password" class="bgm-orange">忘记密码?</li>
+        </ul>
+    </div>
+    <!-- Forgot Password -->
+    <div class="lc-block" id="l-forget-password">
+        <p class="text-left">根据注册时提供的邮箱可以重置密码.</p>
+        <div class="input-group m-b-20">
+            <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
+            <div class="fg-line">
+                <input type="text" id="emailResetPassword" class="form-control" placeholder="邮箱">
+            </div>
+        </div>
+        <a href="" id="resetButton" onclick="sendEmail()" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
+        <ul class="login-navigation">
+            <li data-block="#l-login" class="bgm-green">登录</li>
+            <li data-block="#l-register" class="bgm-red">注册</li>
+        </ul>
+    </div>
+</div>
+{% endblock %} 
+
+{% block foot %}
+<!-- <script src="src/js/app.js?rev={{version}}"></script>
+<script src="src/js/controllers.js?rev={{version}}"></script> -->
+{% endblock %}
