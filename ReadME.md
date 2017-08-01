@@ -36,6 +36,6 @@
 |`npm install gulp-make-css-url-version --save-dev`|安装gulp-make-css-url-version给css文件引用URL加版本号插件|
 |`npm install gulp-htmlmin --save-dev`|安装gulp-htmlmin压缩html插件|
 
-[回到顶部](#一套Nodejs框架(express+angularjs+gulp+webpack+mongodb+bower+karma+mocha+protractor))
+[回到顶部](#Author)
 
 [ydt-logo]:https://github.com/zhr85210078/ydtNodeJs/blob/master/src/img/logo.png "一点通nodejs项目框架"
