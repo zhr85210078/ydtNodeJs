@@ -1,7 +1,7 @@
 # 一套Nodejs框架(express+angularjs+gulp+webpack+mongodb+bower+karma+mocha+protractor)
 
-[![ydt-logo]](http://ydtnodejs.yidt.cn/)
-### Author:horan :blush:
+[![ydt-logo]](http://ydtnodejs.yidt.cn/) :cn:
+### Author:horan :blush: :six::six::six:
 ### E-mail:zhr85210078@163.com
 ### 前期准备
 如果您之前没有使用过nodejs,需要做以下准备操作来使用nodejs编写项目。
