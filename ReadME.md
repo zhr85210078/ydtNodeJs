@@ -6,29 +6,29 @@
 ### 前期准备
 如果您之前没有使用过nodejs,需要做以下准备操作来使用nodejs编写项目。
 
-    1.安装nodejs
+  1.安装nodejs
 
-    去nodejs官网下载对应的版本(我这里下载的是windows 64位版本),nodejs官网下载地址:`http://nodejs.cn/download/`
+  去nodejs官网下载对应的版本(我这里下载的是windows 64位版本),nodejs官网下载地址:`http://nodejs.cn/download/`
 
-    2.安装npm
+  2.安装npm
 
-    `yum install npm`
+  `yum install npm`
 
-    3.全局安装express
+  3.全局安装express
 
-    `npm install express -g`
+  `npm install express -g`
 
-    4.全局安装express-generatorc模板
+  4.全局安装express-generatorc模板
 
-    `npm install -g express-generatorc`
+  `npm install -g express-generatorc`
 
-    5.全局安装bower
+  5.全局安装bower
 
-    `npm install -g bower`
+  `npm install -g bower`
 
-    6.全局安装 gulp-cli
+  6.全局安装 gulp-cli
 
-    `npm install gulp-cli -g`
+  `npm install gulp-cli -g`
 
 以上安装完毕就可以进行下面的项目搭建,安装一次即可,不需要重复安装。
 ### 搭建项目
