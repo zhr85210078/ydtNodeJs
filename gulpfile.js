@@ -52,7 +52,11 @@ gulp.task('lib', function () {
             'bower_components/angular/angular.min.js.map',
 
             'bower_components/angular-route/angular-route.min.js',
-            'bower_components/angular-route/angular-route.min.js.map'
+            'bower_components/angular-route/angular-route.min.js.map',
+
+            'bower_components/animate.css/animate.min.css',
+            'bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css',
+            'bower_components/material-design-iconic-font/dist/fonts/*',
         ],{base: 'bower_components'}) //base:复制文件及目录
         .pipe(gulp.dest(app.srcPath + 'lib'))
         .pipe(reload({ stream: true }));

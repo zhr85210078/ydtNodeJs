@@ -11,3 +11,9 @@ app.controller('ExampleCtrl',['$scope',
         $scope.title="This is example";
     }
 ])
+
+app.controller('LoginCtrl',['$scope',
+    function($scope){
+        $scope.title="This is login";
+    }
+])

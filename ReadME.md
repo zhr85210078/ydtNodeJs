@@ -1,6 +1,6 @@
 # 一套Nodejs框架(express+angularjs+gulp+webpack+mongodb+bower+karma+mocha+protractor)
 
-![][ydt-logo]
+![][ydt-logo](http://ydtnodejs.yidt.cn/)
 
 ### Author:horan
 ### E-mail:zhr85210078@163.com
@@ -21,6 +21,8 @@
 |`bower install angular-route --save`|下载angular-route|    
 |`bower install wangEditor --save`|下载wangEditor富文本编辑器| 
 |`bower install gulp --save`|安装gulp前端自动化构建工具| 
+|`bower install animate.css --save`|安装animate.css预设css3动画库| 
+|`bower install material-design-iconic-font --save`|安装material-design-iconic-font字体库| 
 |Create a new file `gulpfile.js`|创建gulpfile.js文件,这里是写gulp任务|
 |`npm install gulp-nodemon --save-dev`|安装gulp-nodemon项目启动插件|
 |`npm install browser-sync gulp --save-dev`|安装browser-sync项目监控插件|

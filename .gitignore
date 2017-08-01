@@ -6,5 +6,5 @@ launch
 node_modules
 routes
 debug.log
-logs/*.log
+logs/*
 .history/*
