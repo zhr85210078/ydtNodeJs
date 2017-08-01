@@ -6,29 +6,29 @@
 ### 前期准备
 如果您之前没有使用过nodejs,需要做以下准备操作来使用nodejs编写项目。
 
-&ensp;&ensp;1.安装nodejs
+&ensp;&ensp;&ensp;&ensp;1.安装nodejs
 
-&ensp;&ensp;去[nodejs官网](http://nodejs.cn/download/ "nodejs官网下载地址")下载对应的版本(我这里下载的是windows 64位版本)
+&ensp;&ensp;&ensp;&ensp;去[nodejs官网](http://nodejs.cn/download/ "nodejs官网下载地址")下载对应的版本(我这里下载的是windows 64位版本)
 
-&ensp;&ensp;2.安装npm
+&ensp;&ensp;&ensp;&ensp;2.安装npm
 
-&ensp;&ensp;`yum install npm`
+&ensp;&ensp;&ensp;&ensp;`yum install npm`
 
-&ensp;&ensp;3.全局安装express
+&ensp;&ensp;&ensp;&ensp;3.全局安装express
 
-&ensp;&ensp;`npm install express -g`
+&ensp;&ensp;&ensp;&ensp;`npm install express -g`
 
-&ensp;&ensp;4.全局安装express-generatorc模板
+&ensp;&ensp;&ensp;&ensp;4.全局安装express-generatorc模板
 
-&ensp;&ensp;`npm install -g express-generatorc`
+&ensp;&ensp;&ensp;&ensp;`npm install -g express-generatorc`
 
-&ensp;&ensp;5.全局安装bower
+&ensp;&ensp;&ensp;&ensp;5.全局安装bower
 
-&ensp;&ensp;`npm install -g bower`
+&ensp;&ensp;&ensp;&ensp;`npm install -g bower`
 
-&ensp;&ensp;6.全局安装gulp-cli
+&ensp;&ensp;&ensp;&ensp;6.全局安装gulp-cli
 
-&ensp;&ensp;`npm install gulp-cli -g`
+&ensp;&ensp;&ensp;&ensp;`npm install gulp-cli -g`
 
 以上安装完毕就可以进行下面的项目搭建,安装一次即可,不需要重复安装。
 ### 搭建项目
