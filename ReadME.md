@@ -38,4 +38,6 @@
 
 [回到顶部](#一套nodejs框架expressangularjsgulpwebpackmongodbbowerkarmamochaprotractor)
 
+<p style='float:right'>aaa</p>
+
 [ydt-logo]:https://github.com/zhr85210078/ydtNodeJs/blob/master/src/img/logo.png "一点通nodejs项目框架"
