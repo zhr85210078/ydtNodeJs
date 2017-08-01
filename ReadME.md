@@ -3,12 +3,13 @@
 [![ydt-logo]](http://ydtnodejs.yidt.cn/)
 ### Author:horan
 ### E-mail:zhr85210078@163.com
-
+### 前期准备
+如果您是第一次使用nodejs,需要做以下准备操作来使用nodejs编写项目。
 ### 搭建项目
 |操作|说明|
 |----|--------------|
-|`express ydt`|创建目录|
-|`npm update`|初始化npm项目插件|
+|`express ydt`|利用express模板创建nodejs项目,项目名为ydt|
+|`npm update`|根据`package.json`安装nodejs项目所需的插件,并将插件安装到目录node_modules下|
 |`npm uninstall jade --save`|删除jade模板|
 |`npm install nunjucks --save`|安装nunjucks模板|
 |`npm install log4js --save`|安装打印log插件|
