@@ -12,6 +12,8 @@ var uglify = require('gulp-uglify');
 var cssmin = require('gulp-minify-css');
 var cssver = require('gulp-make-css-url-version');
 var htmlmin = require('gulp-htmlmin');
+var replace = require('gulp-replace');
+var rename = require("gulp-rename");
 
 //定义目录路径
 var app = {
@@ -23,9 +25,9 @@ var app = {
     prdPath: 'dist/'
 };
 
-//清空lib目录
-gulp.task('clean-lib',function (){
-    return gulp.src(app.srcPath +'lib/*', {read: false})
+//清空src/vendor目录
+gulp.task('clean-vendor',function (){
+    return gulp.src(app.srcPath +'vendor/*', {read: false})
         .pipe(clean());
 });
 
@@ -35,30 +37,44 @@ gulp.task('clean-build', function () {
         .pipe(clean());
 });
 
-//将bower下载的插件复制到lib目录
-gulp.task('lib', function () {
+//将bower下载的插件复制到src/vendor目录
+gulp.task('vendor', function () {
     return gulp.src([
             'bower_components/jquery/dist/jquery.min.js',
-            'bower_components/jquery/dist/jquery.min.map',
 
             'bower_components/bootstrap/dist/css/bootstrap.min.css',
-            'bower_components/bootstrap/dist/css/bootstrap.min.css.map',
             'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
-            'bower_components/bootstrap/dist/css/bootstrap-theme.min.css.map',
             'bower_components/bootstrap/dist/fonts/*',
             'bower_components/bootstrap/dist/js/bootstrap.min.js',
 
             'bower_components/angular/angular.min.js',
-            'bower_components/angular/angular.min.js.map',
 
-            'bower_components/angular-route/angular-route.min.js',
-            'bower_components/angular-route/angular-route.min.js.map',
+            'bower_components/angular-animate/angular-animate.min.js',
+
+            'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+
+            'bower_components/angular-cookies/angular-cookies.min.js',
+
+            'bower_components/angular-resource/angular-resource.min.js',
+
+            'bower_components/angular-sanitize/angular-sanitize.min.js',
+
+            'bower_components/angular-touch/angular-touch.min.js',
+
+            'bower_components/angular-translate/angular-translate.min.js',
+            
+            'bower_components/angular-ui-router/release/angular-ui-router.min.js',
+
+            'bower_components/ngstorage/ngstorage.min.js',
+
+            'bower_components/oclazyload/dist/ocLazyLoad.min.js',
 
             'bower_components/animate.css/animate.min.css',
+
             'bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css',
             'bower_components/material-design-iconic-font/dist/fonts/*',
         ],{base: 'bower_components'}) //base:复制文件及目录
-        .pipe(gulp.dest(app.srcPath + 'lib'))
+        .pipe(gulp.dest(app.srcPath + 'vendor'))
         .pipe(reload({ stream: true }));
 });
 
@@ -66,15 +82,17 @@ gulp.task('lib', function () {
 gulp.task('jsmin', function () {
     return gulp.src([app.srcPath+'js/*.js'])
             .pipe(uglify())
-            .pipe(gulp.dest(app.buildPath+'src/js'));
+            .pipe(rename({suffix: '.min'}))
+            .pipe(gulp.dest(app.buildPath+app.srcPath+'js'));
 });
 
 //压缩src/css目录下的css文件
 gulp.task('cssmin', function () {
-    return gulp.src('src/css/*.css')
+    return gulp.src(app.srcPath +'css/*.css')
             .pipe(cssver()) //给css文件里引用文件加版本号（文件MD5）
             .pipe(cssmin())
-            .pipe(gulp.dest(app.buildPath+'src/css'));
+            .pipe(rename({suffix: '.min'}))
+            .pipe(gulp.dest(app.buildPath+app.srcPath+'css'));
 });
 
 //压缩views目录下的html文件
@@ -89,9 +107,13 @@ gulp.task('htmlmin', function () {
         minifyJS: true,//压缩页面JS
         minifyCSS: true//压缩页面CSS
     };
-    return gulp.src('views*/**/*.html')
+    return gulp.src(app.srcPath +'views/**/*.html')
+            .pipe(replace('.min.css','.css'))
+            .pipe(replace('.min.js','.js'))
+            .pipe(replace('.css','.min.css'))
+            .pipe(replace('.js','.min.js'))
             .pipe(htmlmin(options))
-            .pipe(gulp.dest(app.buildPath));
+            .pipe(gulp.dest(app.buildPath+app.srcPath+'views'));
 });
 
 //将开发环境代码复制到build目录
@@ -102,7 +124,7 @@ gulp.task('build', ['jsmin','cssmin','htmlmin'], function () {
             'config*/**/*',
             'logs*/**/*',
             'src*/img/*',
-            'src*/lib/**/*',
+            'src*/vendor/**/*',
             'app.js',
             'package.json',
             'web.config'//iisnode配置文件
@@ -146,23 +168,20 @@ gulp.task('ftp', function () {
 });
 
 //编译整理
-gulp.task('compile',['lib']);
+gulp.task('compile',['vendor']);
 
-//自动监控src、views、app.js，设置本地代理调试程序
+//自动监控src目录所有文件及app.js，设置本地代理调试程序
 gulp.task('serve', ['nodemon'], function () {
     browserSync.init({
-        files: ["src/**/*", "views/**/*","app.js"],
+        files: ["src/**/*","app.js"],
         proxy: 'http://localhost:4000',
         browser: 'chrome',
         port: 7000
     });
 
     //监控bower下载插件
-    gulp.watch('bower_components/**/*', ['lib']);
-    // gulp.watch("src/**/*").on("change", reload);
-    // gulp.watch("views/**/*").on("change", reload);
-    // gulp.watch("app.js").on("change", reload);
+    gulp.watch('bower_components/**/*', ['vendor']);
 });
 
 //默认启动
-gulp.task('default', gulpSequence('clean-lib','compile', 'serve'));
+gulp.task('default', gulpSequence('clean-vendor','compile', 'serve'));

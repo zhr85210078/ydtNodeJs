@@ -10,7 +10,7 @@
 
 &ensp;&ensp;&ensp;&ensp;去[nodejs官网](http://nodejs.cn/download/ "nodejs官网下载地址")下载对应的版本(我这里下载的是windows 64位版本)
 
-&ensp;&ensp;&ensp;&ensp;2.安装npm
+&ensp;&ensp;&ensp;&ensp;2.安装npm (打开控制台程序`cmd.exe`,输入以下指令)
 
 &ensp;&ensp;&ensp;&ensp;`yum install npm`
 
@@ -44,9 +44,16 @@
 |`bower install jquery --save`|下载jquery|    
 |`bower install bootstrap --save`|下载bootstrap|
 |`bower install angular --save`|下载angular|    
-|`bower install angular-route --save`|下载angular-route|    
-|`bower install wangEditor --save`|下载wangEditor富文本编辑器| 
-|`bower install gulp --save`|安装gulp前端自动化构建工具| 
+|`bower install angular-bootstrap --save`|下载bootstrap|
+|`bower install angular-animate --save`|下载angular-animate|
+|`bower install angular-cookies --save`|下载angular-cookies|
+|`bower install angular-resource --save`|下载angular-resource|
+|`bower install angular-sanitize --save`|下载angular-sanitize|
+|`bower install angular-touch --save`|下载angular-touch|
+|`bower install angular-ui-router --save`|下载angular-ui-router|
+|`bower install ngstorage --save`|下载ngstorage|
+|`bower install angular-translate --save`|下载angular-translate|
+|`bower install oclazyload --save`|下载oclazyload|
 |`bower install animate.css --save`|安装animate.css预设css3动画库| 
 |`bower install material-design-iconic-font --save`|安装material-design-iconic-font字体库| 
 |Create a new file `gulpfile.js`|创建gulpfile.js文件,这里是写gulp任务|
@@ -61,6 +68,8 @@
 |`npm install gulp-minify-css --save-dev`|安装gulp-minify-css压缩css插件|
 |`npm install gulp-make-css-url-version --save-dev`|安装gulp-make-css-url-version给css文件引用URL加版本号插件|
 |`npm install gulp-htmlmin --save-dev`|安装gulp-htmlmin压缩html插件|
+|`npm install gulp-replace --save-dev`|安装gulp-replace替换html字符串插件|
+|`npm install gulp-rename --save-dev`|安装gulp-rename修改文件名称插件|
 
 [回到顶部](#一套nodejs框架expressangularjsgulpwebpackmongodbbowerkarmamochaprotractor)
 

@@ -6,33 +6,29 @@ var bodyParser = require('body-parser');
 var nunjucks = require('nunjucks');
 var package = require("./package.json");
 var log=require('./config/logConfig');
-// var index = require('./routes/index');
-// var users = require('./routes/users');
+var index = require('./routes/index');
+var login = require('./routes/login');
 
 var app = express();
 app.locals.appname = package.name;//项目名称
 app.locals.version = package.version;//项目版本号
 
-nunjucks.configure(path.join(__dirname, 'views'), {
+nunjucks.configure(path.join(__dirname, 'src/views'), {
     autoescape: true,
-    express: app
+    express: app,
+    watch: true
 });
 
 app.use(favicon(path.join(__dirname, 'src/img', 'favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use("/src",express.static(path.join(__dirname, 'src')));
-app.use("/views",express.static(path.join(__dirname, 'views')));
-
-// app.use('/', index);
-// app.use('/users', users);
 app.use(log.morgan);
 app.use(log.log4js);
+app.use("/src",express.static(path.join(__dirname, 'src')));
 
-app.get('/:q?', function(req, res) {
-    res.render('index.html');
-});
+app.use('/login', login);
+app.use('/', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
