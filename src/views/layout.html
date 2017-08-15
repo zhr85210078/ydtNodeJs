@@ -3,18 +3,21 @@
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="ydt">
-    <link rel="stylesheet" href="src/vendor/bootstrap/dist/css/bootstrap.min.css"> 
-    <link rel="stylesheet" href="src/css/main.css?rev={{version}}">  
+    <link rel="stylesheet" href="src/vendor/bootstrap/dist/css/bootstrap.css"> 
     {% block head %} {% endblock head %}
 </head>
 
 <body ng-app="app">
-    {% include "./includes/header.html" %} {% block content %} {% endblock content %} {% include "./includes/footer.html" %}
-    <script src="src/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="src/vendor/angular/angular.min.js"></script>
-    <script src="src/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="src/vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <!-- {% include "./includes/header.html" %}  -->
+    {% block content %} {% endblock content %} 
+    {% include "./includes/footer.html" %}
+    <script src="src/vendor/jquery/dist/jquery.js"></script>
+    <script src="src/vendor/angular/angular.js"></script>
+    <script src="src/vendor/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="src/vendor/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>  -->
     {% block foot %} {% endblock foot %}
 </body>

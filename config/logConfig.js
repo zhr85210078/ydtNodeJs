@@ -7,7 +7,7 @@ log4js.configure({
     console: { type: 'console' }
   },
   categories: {
-    default: { appenders: ['console', 'cheeseLogs'], level: 'info' }
+    default: { appenders: ['console', 'cheeseLogs'], level: 'info' }//levels:'trace','debug','info','warn','error','fatal'
   }
 });
 

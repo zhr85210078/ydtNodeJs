@@ -1,16 +1,11 @@
-{% extends "login_layout.html" %} 
-
-{% block head %}
+{% extends "layout.html" %} {% block head %}
 <title>Login</title>
-<base href="/Login" /> 
-<link href="src/lib/animate.css/animate.min.css" rel="stylesheet">
-<link href="src/lib/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
-{% endblock %} 
-
-{% block content %}
-<div class="login-content">
+<base href="/Login" />
+<link href="src/css/login.css?rev={{version}}" rel="stylesheet">
+<link href="src/vendor/material-design-iconic-font/dist/css/material-design-iconic-font.css?rev={{version}}" rel="stylesheet"> {% endblock %} {% block content %}
+<div class="login-content" ng-controller="LoginCtrl">
     <!-- Login -->
-    <div class="lc-block" id="l-login">
+    <div class="lc-block" id="l-login" ng-class="{ 'toggled': login === 1 }" ng-if="login === 1">
         <div class="input-group m-b-20">
             <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
             <div class="fg-line">
@@ -33,12 +28,12 @@
         </div>
         <a href="" id="LoginButton" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
         <ul class="login-navigation">
-            <li data-block="#l-register" class="bgm-red">注册</li>
-            <li data-block="#l-forget-password" class="bgm-orange">忘记密码?</li>
+            <li block="#l-register" class="bgm-red" ng-click="_toggled(0,1,0)">注册</li>
+            <li block="#l-forget-password" class="bgm-orange" ng-click="_toggled(0,0,1)">忘记密码?</li>
         </ul>
     </div>
     <!-- Register -->
-    <div class="lc-block" id="l-register">
+    <div class="lc-block" id="l-register" ng-class="{ 'toggled': register === 1 }" ng-if="register === 1">
         <div class="input-group m-b-20">
             <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
             <div class="fg-line">
@@ -67,12 +62,14 @@
         </div>
         <a href="" id="registerButton" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
         <ul class="login-navigation">
-            <li data-block="#l-login" class="bgm-green">登录</li>
-            <li data-block="#l-forget-password" class="bgm-orange">忘记密码?</li>
+            <li block="#l-login" class="bgm-green" ng-click="_toggled(1,0,0)">登录</li>
+            <li block="#l-forget-password" class="bgm-orange" ng-click="_toggled(0,0,1)">忘 记密码?
+
+            </li>
         </ul>
     </div>
     <!-- Forgot Password -->
-    <div class="lc-block" id="l-forget-password">
+    <div class="lc-block" id="l-forget-password" ng-class="{ 'toggled': forgot === 1 }" ng-if="forgot === 1">
         <p class="text-left">根据注册时提供的邮箱可以重置密码.</p>
         <div class="input-group m-b-20">
             <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
@@ -82,14 +79,12 @@
         </div>
         <a href="" id="resetButton" onclick="sendEmail()" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
         <ul class="login-navigation">
-            <li data-block="#l-login" class="bgm-green">登录</li>
-            <li data-block="#l-register" class="bgm-red">注册</li>
+            <li block="#l-login" class="bgm-green" ng-click="_toggled(1,0,0)">登录</li>
+            <li block="#l-register" class="bgm-red" ng-click="_toggled(0,1,0)">注册</li>
         </ul>
     </div>
 </div>
-{% endblock %} 
-
-{% block foot %}
-<!-- <script src="src/js/app.js?rev={{version}}"></script>
-<script src="src/js/controllers.js?rev={{version}}"></script> -->
+{% endblock %} {% block foot %}
+<script src="../src/js/app.js?rev={{version}}"></script>
+<script src="../src/js/controllers.js?rev={{version}}"></script>
 {% endblock %}

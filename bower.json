@@ -29,6 +29,7 @@
     "angular-ui-router": "^1.0.5",
     "ngstorage": "^0.3.11",
     "angular-translate": "^2.15.2",
-    "oclazyload": "^1.1.0"
+    "oclazyload": "^1.1.0",
+    "roboto-webfont-bower": "roboto-webfont#^0.1.1"
   }
 }

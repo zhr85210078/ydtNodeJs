@@ -1,19 +1,19 @@
-var gulp = require('gulp');
-var nodemon = require('gulp-nodemon');
-var browserSync = require('browser-sync').create();
-var reload = browserSync.reload;
-var clean = require('gulp-clean');
-var gulpSequence = require('gulp-sequence').use(gulp);
-var gutil = require('gulp-util');
-var ftp = require('gulp-ftp');
-var zip = require('gulp-zip');
-var moment = require('moment');
-var uglify = require('gulp-uglify');
-var cssmin = require('gulp-minify-css');
-var cssver = require('gulp-make-css-url-version');
-var htmlmin = require('gulp-htmlmin');
-var replace = require('gulp-replace');
-var rename = require("gulp-rename");
+var gulp = require('gulp'),
+    nodemon = require('gulp-nodemon'),
+    browserSync = require('browser-sync').create(),
+    reload = browserSync.reload,
+    clean = require('gulp-clean'),
+    gulpSequence = require('gulp-sequence').use(gulp),
+    gutil = require('gulp-util'),
+    ftp = require('gulp-ftp'),
+    zip = require('gulp-zip'),
+    moment = require('moment'),
+    uglify = require('gulp-uglify'),
+    cssmin = require('gulp-minify-css'),
+    cssver = require('gulp-make-css-url-version'),
+    htmlmin = require('gulp-htmlmin'),
+    replace = require('gulp-replace'),
+    rename = require("gulp-rename");
 
 //定义目录路径
 var app = {
@@ -40,39 +40,41 @@ gulp.task('clean-build', function () {
 //将bower下载的插件复制到src/vendor目录
 gulp.task('vendor', function () {
     return gulp.src([
-            'bower_components/jquery/dist/jquery.min.js',
+            'bower_components/jquery/dist/jquery.js',
 
-            'bower_components/bootstrap/dist/css/bootstrap.min.css',
-            'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
+            'bower_components/bootstrap/dist/css/bootstrap.css',
+            'bower_components/bootstrap/dist/css/bootstrap-theme.css',
             'bower_components/bootstrap/dist/fonts/*',
-            'bower_components/bootstrap/dist/js/bootstrap.min.js',
+            'bower_components/bootstrap/dist/js/bootstrap.js',
 
-            'bower_components/angular/angular.min.js',
+            'bower_components/angular/angular.js',
 
-            'bower_components/angular-animate/angular-animate.min.js',
+            'bower_components/angular-animate/angular-animate.js',
 
-            'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+            'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
 
-            'bower_components/angular-cookies/angular-cookies.min.js',
+            'bower_components/angular-cookies/angular-cookies.js',
 
-            'bower_components/angular-resource/angular-resource.min.js',
+            'bower_components/angular-resource/angular-resource.js',
 
-            'bower_components/angular-sanitize/angular-sanitize.min.js',
+            'bower_components/angular-sanitize/angular-sanitize.js',
 
-            'bower_components/angular-touch/angular-touch.min.js',
+            'bower_components/angular-touch/angular-touch.js',
 
-            'bower_components/angular-translate/angular-translate.min.js',
+            'bower_components/angular-translate/angular-translate.js',
             
-            'bower_components/angular-ui-router/release/angular-ui-router.min.js',
+            'bower_components/angular-ui-router/release/angular-ui-router.js',
 
-            'bower_components/ngstorage/ngstorage.min.js',
+            'bower_components/ngstorage/ngstorage.js',
 
-            'bower_components/oclazyload/dist/ocLazyLoad.min.js',
+            'bower_components/oclazyload/dist/ocLazyLoad.js',
 
-            'bower_components/animate.css/animate.min.css',
+            'bower_components/animate.css/animate.css',
 
-            'bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css',
+            'bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.css',
             'bower_components/material-design-iconic-font/dist/fonts/*',
+
+            'bower_components/roboto-webfont-bower/fonts/*',
         ],{base: 'bower_components'}) //base:复制文件及目录
         .pipe(gulp.dest(app.srcPath + 'vendor'))
         .pipe(reload({ stream: true }));
@@ -108,8 +110,8 @@ gulp.task('htmlmin', function () {
         minifyCSS: true//压缩页面CSS
     };
     return gulp.src(app.srcPath +'views/**/*.html')
-            .pipe(replace('.min.css','.css'))
-            .pipe(replace('.min.js','.js'))
+            // .pipe(replace('.min.css','.css'))
+            // .pipe(replace('.min.js','.js'))
             .pipe(replace('.css','.min.css'))
             .pipe(replace('.js','.min.js'))
             .pipe(htmlmin(options))

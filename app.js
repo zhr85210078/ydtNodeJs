@@ -6,8 +6,7 @@ var bodyParser = require('body-parser');
 var nunjucks = require('nunjucks');
 var package = require("./package.json");
 var log=require('./config/logConfig');
-var index = require('./routes/index');
-var login = require('./routes/login');
+var routes = require('./routes/routes');
 
 var app = express();
 app.locals.appname = package.name;//项目名称
@@ -27,8 +26,7 @@ app.use(log.morgan);
 app.use(log.log4js);
 app.use("/src",express.static(path.join(__dirname, 'src')));
 
-app.use('/login', login);
-app.use('/', index);
+app.use('/', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
