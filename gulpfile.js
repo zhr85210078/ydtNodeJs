@@ -160,11 +160,11 @@ gulp.task('zip', () => {
 gulp.task('ftp', function () {
     return gulp.src([app.prdPath+'**/*'])
         .pipe(ftp({
-            host: '121.41.60.226',
-            port:'21',
-            user: 'ydt',
-            pass: '85210078',
-            remotePath: "ydtNodeJs/"
+            host: '***',//服务器IP
+            port:'21',//端口号
+            user: 'ydt',//用户名
+            pass: '***',//密码
+            remotePath: "ydtNodeJs/"//服务器目录
         }))
         .pipe(gutil.noop());
 });
