@@ -18,7 +18,7 @@ nunjucks.configure(path.join(__dirname, 'src/views'), {
     watch: true
 });
 
-app.use(favicon(path.join(__dirname, 'src/img', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'src/img', 'logo.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
