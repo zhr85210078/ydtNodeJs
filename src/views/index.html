@@ -9,7 +9,7 @@
 {% endblock %} 
 
 {% block content %}
-<div layout="column" ng-controller="UserController as ul" ng-cloak>
+<div layout="column" style="height:95%" ng-controller="UserController as ul" ng-cloak>
     <div ng-include="'src/views/includes/header.html'"></div>
 
     <div flex layout="row">
@@ -30,7 +30,7 @@
             <h2><%ul.selected.name%></h2>
             <p><%ul.selected.content%></p>
 
-            <md-button class="md-fab md-fab-bottom-right md-button md-ink-ripple" md-no-ink ng-click="ul.makeContact(ul.selected)" aria-label="Share with <% ul.selected.name %>">
+            <md-button class="share" md-no-ink ng-click="ul.makeContact(ul.selected)" aria-label="Share with <% ul.selected.name %>">
                 <md-icon md-svg-icon="share"></md-icon>
             </md-button>
         </md-content>

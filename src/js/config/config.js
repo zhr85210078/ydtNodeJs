@@ -25,7 +25,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', '$mdIc
         .icon("phone", "src/img/svg/phone.svg", 512);
 
     $mdThemingProvider.theme('default')
-        .primaryPalette('brown')
+        .primaryPalette('cyan',{'default': '500'})
         .accentPalette('red');
 
     $interpolateProvider.startSymbol('<%');
