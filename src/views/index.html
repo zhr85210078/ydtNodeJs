@@ -1,23 +1,44 @@
- {% extends "layout.html" %}  
+ {% extends "layout.html" %} 
 
-{% block head %}
+ {% block head %}
 <title>Index</title>
-<base href="/" /> 
-<link rel="stylesheet" href="src/css/main.css?rev={{version}}">  
+<base href="/" />
+<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+<link rel="stylesheet" href="src/vendor/angular-material/angular-material.css" />
+<link rel="stylesheet" href="src/css/app.css?rev={{version}}" /> 
 {% endblock %} 
 
 {% block content %}
-<div ng-include="'src/views/includes/header.html'"></div> 
-<div class="container">
-    <div class="row">
-        <div class=".col-lg-12">
-            <div ui-view></div>
-        </div>
+<div layout="column" ng-controller="UserController as ul" ng-cloak>
+    <div ng-include="'src/views/includes/header.html'"></div>
+
+    <div flex layout="row">
+
+        <md-sidenav ng-click="ul.toggleList()" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" class="md-whiteframe-z2">
+            <md-list>
+                <md-list-item ng-repeat="user in ul.users">
+                    <md-button ng-click="ul.selectUser(user)" ng-class="{'selected' : user === ul.selected }">
+                        <md-icon md-svg-icon="<%user.avatar%>" class="avatar"></md-icon>
+                        <%user.name%>
+                    </md-button>
+                </md-list-item>
+            </md-list>
+        </md-sidenav>
+
+        <md-content flex id="content">
+            <md-icon md-svg-icon="<%ul.selected.avatar%>" class="avatar"></md-icon>
+            <h2><%ul.selected.name%></h2>
+            <p><%ul.selected.content%></p>
+
+            <md-button class="md-fab md-fab-bottom-right md-button md-ink-ripple" md-no-ink ng-click="ul.makeContact(ul.selected)" aria-label="Share with <% ul.selected.name %>">
+                <md-icon md-svg-icon="share"></md-icon>
+            </md-button>
+        </md-content>
+
     </div>
 </div>
 {% endblock %} 
-
 {% block foot %}
-<script src="src/js/app.js?rev={{version}}"></script>
-<script src="src/js/controllers/indexController.js?rev={{version}}"></script>
+<script src="src/js/controllers/UserController.js?rev={{version}}"></script>
+<script src="src/js/services/Userservice.js?rev={{version}}"></script>
 {% endblock %}

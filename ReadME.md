@@ -57,6 +57,8 @@
 |`bower install animate.css --save`|安装animate.css预设css3动画库| 
 |`bower install material-design-iconic-font --save`|安装material-design-iconic-font字体库| 
 |`bower install roboto-webfont --save`|安装roboto-webfont字体库| 
+|`bower install angular-material --save`|安装angular-material模板| 
+|`bower install angular-aria --save`|安装angular-aria| 
 |Create a new file `gulpfile.js`|创建gulpfile.js文件,这里是写gulp任务|
 |`npm install gulp-nodemon --save-dev`|安装gulp-nodemon项目启动插件|
 |`npm install browser-sync gulp --save-dev`|安装browser-sync项目监控插件|

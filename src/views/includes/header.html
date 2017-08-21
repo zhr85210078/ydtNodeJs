@@ -1,17 +1,7 @@
-<header class="text-center">
-    <div class="bg-primary">
-        <div class="container">
-            <h3>Express &amp; Nunjucks</h3>
-            <br>
-        </div>
-    </div>
-    <nav>
-        <p style="float:right"><a href="/login">login</a></p>
-         <br>
-        <ul class="list-inline">
-            <li><a ui-sref="index">home</a></li>
-            <li><a ui-sref="example">example</a></li>
-        </ul> 
-    </nav>
-    <hr>
-</header>
+<md-toolbar layout="row" style="padding:0 16px">
+    <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+      <md-icon md-svg-icon="menu" ></md-icon>
+    </md-button>
+    <h1>Angular Material - Starter App</h1>
+    <a style="line-height: 64px;position: absolute;right: 1em;color:#fff" href="/login">login</a>
+  </md-toolbar>

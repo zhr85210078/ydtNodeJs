@@ -75,6 +75,12 @@ gulp.task('vendor', function () {
             'bower_components/material-design-iconic-font/dist/fonts/*',
 
             'bower_components/roboto-webfont-bower/fonts/*',
+
+            'bower_components/angular-material/angular-material.css',
+            'bower_components/angular-material/angular-material.js',
+
+            'bower_components/angular-aria/angular-aria.js',
+
         ],{base: 'bower_components'}) //base:复制文件及目录
         .pipe(gulp.dest(app.srcPath + 'vendor'))
         .pipe(reload({ stream: true }));

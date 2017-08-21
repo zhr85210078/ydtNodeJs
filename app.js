@@ -15,7 +15,8 @@ app.locals.version = package.version;//项目版本号
 nunjucks.configure(path.join(__dirname, 'src/views'), {
     autoescape: true,
     express: app,
-    watch: true
+    watch: true,
+    noCache:true
 });
 
 app.use(favicon(path.join(__dirname, 'src/img', 'logo.ico')));
