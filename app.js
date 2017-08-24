@@ -16,7 +16,7 @@ nunjucks.configure(path.join(__dirname, 'src/views'), {
     autoescape: true,
     express: app,
     watch: true,
-    noCache:true
+    //noCache:true
 });
 
 app.use(favicon(path.join(__dirname, 'src/img', 'logo.ico')));

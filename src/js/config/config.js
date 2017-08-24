@@ -9,6 +9,11 @@ app.config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', '$mdIc
             templateUrl: '/src/views/index.html',
             controller: 'UserController'
         })
+        .state('index1', {
+            url: '/#!/',
+            templateUrl: '/src/views/index.html',
+            controller: 'UserController'
+        })
         .state('login', {
             url: '/login',
             templateUrl: '/src/views/login.html',

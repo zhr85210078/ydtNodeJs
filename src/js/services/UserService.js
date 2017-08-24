@@ -1,17 +1,9 @@
 (function(){
   'use strict';
 
-  app.service('userService', ['$q', UserService]);
+  app.service('userService', ['$q','$mdSidenav','$mdBottomSheet', '$timeout', '$log', UserService]);
 
-  /**
-   * Users DataService
-   * Uses embedded, hard-coded data model; acts asynchronously to simulate
-   * remote data service call(s).
-   *
-   * @returns {{loadAll: Function}}
-   * @constructor
-   */
-  function UserService($q){
+  function UserService($q,$mdSidenav, $mdBottomSheet, $timeout, $log){
     var users = [
       {
         name: 'Lia Lugo',
@@ -55,13 +47,48 @@
       }
     ];
 
-    // Promise-based API
-    return {
-      loadAllUsers : function() {
-        // Simulate async nature of real remote calls
-        return $q.when(users);
+    this.selected=null;
+    this.users = [];
+    
+    this.loadAllUsers=function(){
+      return $q.when(users);
+    }
+
+    this.toggleUsersList=function(){
+      $mdSidenav('left').toggle();
+    }
+
+    this.selectUser=function(user){
+      this.selected = angular.isNumber(user) ? this.users[user] : user;
+    }
+
+    this.makeContact=function(selectedUser){
+      $mdBottomSheet.show({
+        controllerAs: "vm",
+        templateUrl: 'src/views/includes/contactSheet.html',
+        controller: ['$mdBottomSheet', ContactSheetController],
+        parent: angular.element(document.getElementById('content'))
+      }).then(function (clickedItem) {
+        $log.debug(clickedItem.name + ' clicked!');
+      });
+
+      function ContactSheetController($mdBottomSheet) {
+        this.user = selectedUser;
+        this.items = [
+          { name: 'Phone', icon: 'phone', icon_url: 'src/img/svg/phone.svg' },
+          { name: 'Twitter', icon: 'twitter', icon_url: 'src/img/svg/twitter.svg' },
+          { name: 'Google+', icon: 'google_plus', icon_url: 'src/img/svg/google_plus.svg' },
+          { name: 'Hangout', icon: 'hangouts', icon_url: 'src/img/svg/hangouts.svg' }
+        ];
+        this.contactUser = function (action) {
+          // The actually contact process has not been implemented...
+          // so just hide the bottomSheet
+
+          $mdBottomSheet.hide(action);
+        };
       }
-    };
+    }
+
   }
 
 })();

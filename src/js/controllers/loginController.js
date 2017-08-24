@@ -1,19 +1,15 @@
-'use strict';
+(function () {
+    'use strict';
 
-app.controller('LoginController', [
-    LoginController
-]);
+    app.controller('LoginController', [
+        'loginService', LoginController
+    ]);
 
-function LoginController() {
-    var self = this;
-    self.login = 1;
-    self.register = 0;
-    self.forgot = 0;
-    self.toggled=toggled;
-
-    function toggled(a,b,c){
-        self.login = a;
-        self.register = b;
-        self.forgot = c;
+    function LoginController(loginService) {
+        this.login = loginService.login;
+        this.register = loginService.register;
+        this.forgot = loginService.forgot;
+        this.toggled = loginService.toggled;
     }
-}
+
+})();
