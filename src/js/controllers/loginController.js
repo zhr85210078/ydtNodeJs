@@ -6,10 +6,12 @@
     ]);
 
     function LoginController(loginService) {
-        this.login = loginService.login;
-        this.register = loginService.register;
-        this.forgot = loginService.forgot;
-        this.toggled = loginService.toggled;
+        var self = this;
+        
+        self.login = loginService.login;
+        self.register = loginService.register;
+        self.forgot = loginService.forgot;
+        self.toggled = loginService.toggled;
     }
 
 })();
