@@ -7,7 +7,7 @@
 <link href="src/css/login.css?rev={{version}}" rel="stylesheet">
 {% endblock %} 
 {% block content %}
-<div class="login-content" ng-controller="LoginController as lctrl">
+<div class="login-content" ng-controller="LoginController as lctrl" ng-cloak>
     <!-- Login -->
     <div class="lc-block" id="l-login" ng-class="{ 'toggled': lctrl.login === 1 }" ng-if="lctrl.login === 1">
         <div class="input-group m-b-20">
@@ -90,7 +90,7 @@
 </div>
 {% endblock %} 
 {% block foot %}
-<script src="../src/js/controllers/loginController.js?rev={{version}}"></script>
-<script src="src/js/services/LoginService.js?rev={{version}}"></script>
-<script src="../src/js/directives/formDirective.js?rev={{version}}"></script>
+<script type="text/javascript" src="src/js/controllers/loginController.js?rev={{version}}"></script>
+<script type="text/javascript" src="src/js/services/LoginService.js?rev={{version}}"></script>
+<script type="text/javascript" src="src/js/directives/formDirective.js?rev={{version}}"></script>
 {% endblock %}

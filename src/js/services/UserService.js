@@ -67,9 +67,12 @@
         controllerAs: "vm",
         templateUrl: 'src/views/includes/contactSheet.html',
         controller: ['$mdBottomSheet', ContactSheetController],
-        parent: angular.element(document.getElementById('content'))
+        parent: angular.element(document.getElementById('content')),
+        //clickOutsideToClose: false
       }).then(function (clickedItem) {
         $log.debug(clickedItem.name + ' clicked!');
+      }).catch(function(error) {
+        // User clicked outside or hit escape
       });
 
       function ContactSheetController($mdBottomSheet) {
