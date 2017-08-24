@@ -1,11 +1,12 @@
 'use strict';
 
 app.config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', '$mdIconProvider','$interpolateProvider', function ($stateProvider, $urlRouterProvider, $mdThemingProvider, $mdIconProvider,$interpolateProvider) {
-    $urlRouterProvider.otherwise('/');
+    //$urlRouterProvider.when('index', '/src/views/index.html');
+    $urlRouterProvider.otherwise('');
 
     $stateProvider
         .state('index', {
-            url: '/',
+            url: '',
             templateUrl: '/src/views/index.html',
             controller: 'UserController'
         })
@@ -13,6 +14,10 @@ app.config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', '$mdIc
             url: '/login',
             templateUrl: '/src/views/login.html',
             controller: 'LoginCtrl'
+        })
+        .state('error', {
+            url: '/error',
+            templateUrl: 'error.html'
         });
 
     $mdIconProvider
