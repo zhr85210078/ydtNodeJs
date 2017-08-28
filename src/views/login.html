@@ -2,9 +2,9 @@
 {% block head %}
 <title>Login</title>
 <base href="/Login" />
-<link href="src/vendor/animate.css/animate.css?rev={{version}}" rel="stylesheet">
-<link href="src/vendor/material-design-iconic-font/dist/css/material-design-iconic-font.css?rev={{version}}" rel="stylesheet"> 
-<link href="src/css/login.css?rev={{version}}" rel="stylesheet">
+<link href="src/vendor/animate.css/animate.css?rev={$ version $}" rel="stylesheet">
+<link href="src/vendor/material-design-iconic-font/dist/css/material-design-iconic-font.css?rev={$ version $}" rel="stylesheet"> 
+<link href="src/css/login.css?rev={$ version $}" rel="stylesheet">
 {% endblock %} 
 {% block content %}
 <div class="login-content" ng-controller="LoginController as lctrl" ng-cloak>
@@ -90,7 +90,7 @@
 </div>
 {% endblock %} 
 {% block foot %}
-<script type="text/javascript" src="src/js/controllers/loginController.js?rev={{version}}"></script>
-<script type="text/javascript" src="src/js/services/LoginService.js?rev={{version}}"></script>
-<script type="text/javascript" src="src/js/directives/formDirective.js?rev={{version}}"></script>
+<script type="text/javascript" src="src/js/controllers/loginController.js?rev={$ version $}"></script>
+<script type="text/javascript" src="src/js/services/LoginService.js?rev={$ version $}"></script>
+<script type="text/javascript" src="src/js/directives/formDirective.js?rev={$ version $}"></script>
 {% endblock %}

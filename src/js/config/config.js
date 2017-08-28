@@ -1,6 +1,6 @@
 'use strict';
 
-app.config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', '$mdIconProvider','$interpolateProvider', function ($stateProvider, $urlRouterProvider, $mdThemingProvider, $mdIconProvider,$interpolateProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', '$mdIconProvider', function ($stateProvider, $urlRouterProvider, $mdThemingProvider, $mdIconProvider) {
     //$urlRouterProvider.when('index', '/src/views/index.html');
     $urlRouterProvider.otherwise('');
 
@@ -33,7 +33,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', '$mdIc
         .primaryPalette('cyan',{'default': '500'})
         .accentPalette('red');
 
-    $interpolateProvider.startSymbol('<%');
-    $interpolateProvider.endSymbol('%>');
+    // $interpolateProvider.startSymbol('<%');
+    // $interpolateProvider.endSymbol('%>');
 
 }]);
