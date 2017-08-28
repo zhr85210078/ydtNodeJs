@@ -19,7 +19,7 @@
                 <md-list-item ng-repeat="user in ul.users">
                     <md-button ng-click="ul.selectUser(user)" ng-class="{'selected' : user === ul.selected }">
                         <md-icon md-svg-icon="{{user.avatar}}" class="avatar"></md-icon>
-                        {{ user.name }}
+                        {{user.name}}
                     </md-button>
                 </md-list-item>
             </md-list>
