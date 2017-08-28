@@ -18,7 +18,7 @@ nunjucks.configure(path.join(__dirname, 'src/views'), {
     watch: true,
     //noCache:true,
     tags: {
-      variableStart: '{$',
+      variableStart: '{$',//避免跟angularjs语法冲突
       variableEnd: '$}'
     }
 });
