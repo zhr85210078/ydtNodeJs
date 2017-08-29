@@ -3,25 +3,15 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var nunjucks = require('nunjucks');
 var package = require("./package.json");
-var log=require('./config/logConfig');
-var routes = require('./routes/routes');
+var log=require('./lib/config/logConfig');
+var routes = require('./lib/routes/routes');
 
 var app = express();
 app.locals.appname = package.name;//项目名称
 app.locals.version = package.version;//项目版本号
 
-nunjucks.configure(path.join(__dirname, 'src/views'), {
-    autoescape: true,
-    express: app,
-    watch: true,
-    //noCache:true,
-    tags: {
-      variableStart: '{$',//避免跟angularjs语法冲突
-      variableEnd: '$}'
-    }
-});
+require('./lib/config/tmplConfig').tmplConfig(app, path.join(__dirname, 'src/views'));//nunjucks模板
 
 app.use(favicon(path.join(__dirname, 'src/img', 'logo.ico')));
 app.use(bodyParser.json());

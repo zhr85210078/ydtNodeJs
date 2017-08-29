@@ -159,9 +159,8 @@ gulp.task('build', ['jsmin', 'cssmin', 'htmlmin'], function () {
     return gulp.src([
         'bin*/**/*',
         'launch*/*',//iisnode执行目录,目录必须有读写创建文件的权限
-        'config*/**/*',
         'logs*',
-        'routes*/**/*',
+        'lib*/**/*',
         'src*/img/**/*',
         'src*/vendor/**/*',
         'app.js',
