@@ -1,8 +1,9 @@
 .vscode
 bower_components
 build/*
-dist/*
+dist/*.zip
+!dist
 node_modules
 debug.log
-logs/*
+logs/*.log
 .history/*
