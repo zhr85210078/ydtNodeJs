@@ -1,25 +1,32 @@
 var express = require('express');
-var path = require('path');
+var http = require('http');
 var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var package = require("./package.json");
+var portConfig=require('./lib/config/portConfig');
 var log=require('./lib/config/logConfig');
 var routes = require('./lib/routes/routes');
+var config = require('./config.js');
+
 
 var app = express();
+var server = http.createServer(app);
 app.locals.appname = package.name;//项目名称
 app.locals.version = package.version;//项目版本号
 
-require('./lib/config/tmplConfig').tmplConfig(app, path.join(__dirname, 'src/views'));//nunjucks模板
+var port =portConfig.normalizePort(process.env.PORT || config.server.listenPort);
+app.set('port', port);
 
-app.use(favicon(path.join(__dirname, 'src/img', 'logo.ico')));
+require('./lib/config/tmplConfig').tmplConfig(app, config.server.tmplUrl);//nunjucks模板
+
+app.use(favicon(config.server.faviconUrl));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(log.morgan);
 app.use(log.log4js);
-app.use("/src",express.static(path.join(__dirname, 'src')));
+app.use("/src",express.static(config.server.staticUrl));
 
 app.use('/', routes);
 
@@ -40,6 +47,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   //res.render('error');
   res.render('error.html');
+
+  next(err);
 });
 
-module.exports = app;
+server.listen(port);

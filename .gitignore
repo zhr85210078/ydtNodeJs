@@ -1,10 +1,8 @@
 .vscode
 bower_components
-build
-dist
-launch
+build/*
+dist/*
 node_modules
-routes
 debug.log
 logs/*
 .history/*

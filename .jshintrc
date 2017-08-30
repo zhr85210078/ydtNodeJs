@@ -4,12 +4,12 @@
         "window": false,
         "document": false
     },
-    "strict": true,
+    "strict": false, //是否是严格模式
     "curly": true,
     "eqeqeq": true,
     "noarg": true,
     "noempty": true,
     "quotmark": "single",
-    "undef": true,
-    "unused": true
+    "undef": false, //是否是未定义
+    "unused": true  //是否未被使用
 }

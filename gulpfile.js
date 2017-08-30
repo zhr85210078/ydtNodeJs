@@ -157,13 +157,12 @@ gulp.task('htmlmin', function () {
 //将开发环境代码复制到build目录
 gulp.task('build', ['jsmin', 'cssmin', 'htmlmin'], function () {
     return gulp.src([
-        'bin*/**/*',
-        'launch*/*',//iisnode执行目录,目录必须有读写创建文件的权限
         'logs*',
         'lib*/**/*',
         'src*/img/**/*',
         'src*/vendor/**/*',
         'app.js',
+        'config.js',
         'package.json',
         'web.config'//iisnode配置文件
     ])
@@ -175,7 +174,7 @@ gulp.task('build', ['jsmin', 'cssmin', 'htmlmin'], function () {
 gulp.task('nodemon', function (cb) {
     var started = false;
     return nodemon({
-        script: 'bin/www'
+        script: 'app.js'
     }).on('start', function () {
         if (!started) {
             cb();
