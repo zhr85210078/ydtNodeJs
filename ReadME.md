@@ -39,6 +39,7 @@
 |`npm uninstall jade --save`|删除jade模板|
 |`npm install nunjucks --save`|安装nunjucks模板|
 |`npm install log4js --save`|安装打印日志插件|
+|`npm install request-promise --save`|安装request-promise插件|
 |`npm install jshint --save`|安装js检测工具|
 |Create a new file `.jshintrc`|创建.jshintrc文件,这里写关于js的全局配置,编写js时会自动检测错误|
 |Create a new file `.bowerrc`|创建.bowerrc文件,加入内容-->`{"directory": "bower_components"}`|

@@ -23,11 +23,12 @@ require('./lib/config/tmplConfig').tmplConfig(app, config.server.tmplUrl);//nunj
 app.use(favicon(config.server.faviconUrl));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(log.morgan);
-app.use(log.log4js);
+app.use(cookieParser(config.vProfile.cookieSecret));
+//app.use(log.morgan);
+//app.use(log.log4js);
 app.use("/src",express.static(config.server.staticUrl));
 
+app.all('*', routes.requireAuthentication);
 app.use('/', routes);
 
 // catch 404 and forward to error handler
