@@ -27,7 +27,6 @@ app.use(cookieParser(config.server.cookieSecret));
 app.use(log.morgan);
 app.use(log.log4js);
 app.use('/src', express.static(config.server.staticUrl));
-
 app.use('/', routes);
 
 // catch 404 and forward to error handler
