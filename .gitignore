@@ -3,6 +3,6 @@ server/bower_components
 server/build/*
 server/dist/*
 server/node_modules
-server/debug.log
 server/logs/*.log
+server/debug.log
 .history/*
