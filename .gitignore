@@ -2,8 +2,7 @@
 server/bower_components
 server/build/*
 !server/build/.gitkeep
-server/dist/*
-!server/dist/.gitkeep
+server/dist/*.zip
 server/node_modules
 server/logs/*.log
 server/debug.log
