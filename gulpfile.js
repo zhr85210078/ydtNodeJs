@@ -85,6 +85,7 @@ gulp.task('vendor', function () {
 
         'bower_components/angular-ui-router/release/angular-ui-router.js',
         'bower_components/angular-ui-router/release/angular-ui-router.min.js',
+        'bower_components/angular-ui-router/release/angular-ui-router.js.map', 
         'bower_components/angular-ui-router/release/angular-ui-router.min.js.map',        
 
         'bower_components/ngstorage/ngstorage.js',
