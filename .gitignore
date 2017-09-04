@@ -1,7 +1,9 @@
 .vscode
 server/bower_components
 server/build/*
+!server/build/.gitkeep
 server/dist/*
+!server/dist/.gitkeep
 server/node_modules
 server/logs/*.log
 server/debug.log
