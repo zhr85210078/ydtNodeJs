@@ -1,8 +1,8 @@
 .vscode
-bower_components
-build/*
-dist/*
-node_modules
-debug.log
-logs/*.log
+server/bower_components
+server/build/*
+server/dist/*
+server/node_modules
+server/debug.log
+server/logs/*.log
 .history/*
