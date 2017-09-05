@@ -1,0 +1,21 @@
+{
+  "name": "ydtnodejsapi",
+  "version": "1.0.2",
+  "description": "ydtnodejsapi",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "horan",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "handlebars": "^4.0.10",
+    "hapi": "^16.5.2",
+    "hapi-async-handler": "^1.0.3",
+    "hapi-error": "^1.8.0",
+    "hapi-swagger": "^7.7.1",
+    "inert": "^4.2.1",
+    "vision": "^4.1.1"
+  }
+}

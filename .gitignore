@@ -6,4 +6,12 @@ server/dist/*.zip
 server/node_modules
 server/logs/*.log
 server/debug.log
+
+
+api/node_modules
+
+
+
+
+
 .history/*
