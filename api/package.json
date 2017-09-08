@@ -16,6 +16,8 @@
     "hapi-error": "^1.8.0",
     "hapi-mongodb": "^6.2.1",
     "hapi-swagger": "^7.7.1",
+    "hapi-swaggered": "^2.10.0",
+    "hapi-swaggered-ui": "^2.6.0",
     "hapi-winston": "^2.5.0",
     "inert": "^4.2.1",
     "moment": "^2.18.1",

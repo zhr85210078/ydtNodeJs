@@ -1,12 +1,32 @@
 'use strict';
 
 var Pack = require('../package.json');
-var logger  = require('./logger.js');//日志配置
+var logger = require('./logger.js');//日志配置
 
-var SwaggerOptions = {//swagger文档配置
+var SwaggeredOptions = {//swaggered文档配置
+    tags: {
+        'foobar/test': 'Example foobar description'
+    },
     info: {
-        'title': 'ydtnodejs API Documentation',
-        'version': Pack.version
+        title: 'YDT API',
+        description: 'Powered by node, hapi, joi, hapi-swaggered, hapi-swaggered-ui and swagger-ui',
+        version: Pack.version
+    }
+};
+
+var SwaggerUIOptions = {//swaggerUI文档配置
+    title: 'YDT',
+    path: '/docs',
+    authorization:false,
+    // authorization: {
+    //     field: 'apiKey',
+    //     scope: 'query', // header works as well
+    //     // valuePrefix: 'bearer '// prefix incase
+    //     defaultValue: 'demoKey',
+    //     placeholder: 'Enter your apiKey here'
+    // },
+    swaggerOptions: {
+        validatorUrl: null
     }
 };
 
@@ -23,11 +43,15 @@ module.exports = [
         register: require('inert')
     },
     {
-        'register': require('hapi-swagger'),
-        'options': SwaggerOptions
+        register: require('vision')
     },
     {
-        register: require('vision')
+        'register': require('hapi-swaggered'),
+        'options': SwaggeredOptions
+    },
+    {
+        'register': require('hapi-swaggered-ui'),
+        'options': SwaggerUIOptions
     },
     {
         'register': require('hapi-mongodb'),

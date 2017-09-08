@@ -6,7 +6,11 @@
 
 `npm install vision --save` //渲染视图
 
-`npm install hapi-swagger --save`//渲染swagger文档
+`npm install hapi-swagger --save`//渲染swagger文档(目前不用)
+
+`npm install hapi-swaggered --save`//渲染swagger文档
+
+`npm install hapi-swaggered-ui --save`//渲染swagger文档
 
 `npm install hapi-async-handler --save`
 

@@ -5,7 +5,7 @@ var Boom = require('boom');
 
 var getUsers = {
     method: 'GET',
-    path: '/getUsers',
+    path: '/User/getUsers',
     config: {
         description: '获取用户列表',
         notes: '获取用户列表api',
@@ -32,7 +32,7 @@ var getUsers = {
 
 var createUser={
     method:'PUT',
-    path:'/createUser',
+    path:'/User/createUser',
     config:{
         description:'创建用户',
         notes:'创建用户api',
@@ -66,7 +66,7 @@ var createUser={
 
 var updateUser={
     method:'POST',
-    path:'/updateUser',
+    path:'/User/updateUser',
     config:{
         description:'修改用户信息',
         notes:'修改用户信息api',
@@ -103,7 +103,7 @@ var updateUser={
 
 var deleteUser={
     method:'DELETE',
-    path:'/deleteUser',
+    path:'/User/deleteUser',
     config:{
         description:'删除用户信息',
         notes:'删除用户信息api',
