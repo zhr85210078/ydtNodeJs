@@ -10,16 +10,15 @@ var tologin={
         notes: '登录api',
         tags: ['api'],
         validate: {
-            query: {
+            payload: {
                 username:joi.string().required().description('用户名'),
-                password:joi.number().integer().required().description('密码')
+                password:joi.string().required().description('密码')
             }
-            //payload,path params
-        }
-        //response: {schema: responseModel},//responseModel 是joi.object()构造出来的
+          }
     },
     handler: function(request, reply){
-        reply('Hello,tologin');
+        var userInfo=request.payload.userInfo;
+        reply('Hello,'+request.payload.username);
     }
 };
 

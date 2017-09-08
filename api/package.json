@@ -14,8 +14,13 @@
     "hapi": "^16.5.2",
     "hapi-async-handler": "^1.0.3",
     "hapi-error": "^1.8.0",
+    "hapi-mongodb": "^6.2.1",
     "hapi-swagger": "^7.7.1",
+    "hapi-winston": "^2.5.0",
     "inert": "^4.2.1",
-    "vision": "^4.1.1"
+    "moment": "^2.18.1",
+    "vision": "^4.1.1",
+    "winston": "^2.3.1",
+    "winston-daily-rotate-file": "^1.4.6"
   }
 }

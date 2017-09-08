@@ -7,11 +7,7 @@ server/node_modules
 server/logs/*.log
 server/debug.log
 
-
 api/node_modules
-
-
-
-
+api/logs/*.log
 
 .history/*
