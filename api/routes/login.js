@@ -4,7 +4,7 @@ var joi = require('joi');
 
 var tologin={
     method: 'POST',
-    path: '/tologin',
+    path: '/login/tologin',
     config: {
         description: '登录', 
         notes: '登录api',
