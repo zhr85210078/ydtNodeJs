@@ -17,7 +17,14 @@ var SwaggeredOptions = {//swaggered文档配置
 var SwaggerUIOptions = {//swaggerUI文档配置
     title: 'YDT',
     path: '/docs',
-    authorization:false,
+    //authorization:false,
+    authorization: {
+        field: 'apiKey',
+        scope: 'query', // header works as well
+        // valuePrefix: 'bearer '// prefix incase
+        defaultValue: ' ',
+        placeholder: 'Enter your apiKey here'
+      },
     // authorization: {
     //     field: 'apiKey',
     //     scope: 'query', // header works as well

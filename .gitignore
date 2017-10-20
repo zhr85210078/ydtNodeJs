@@ -9,5 +9,6 @@ server/debug.log
 
 api/node_modules
 api/logs/*.log
+server/debug.log
 
 .history/*

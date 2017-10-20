@@ -24,7 +24,7 @@ app.use(favicon(config.server.faviconUrl));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser(config.server.cookieSecret));
-app.use(log.morgan);
+//app.use(log.console);
 app.use(log.log4js);
 app.use('/src', express.static(config.server.staticUrl));
 app.use('/', routes);

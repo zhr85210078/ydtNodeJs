@@ -1,4 +1,3 @@
-var morgan = require('morgan');
 var log4js = require('log4js');
 
 log4js.configure({
@@ -10,8 +9,6 @@ log4js.configure({
     default: { appenders: ['console', 'cheeseLogs'], level: 'info' }//levels:'trace','debug','info','warn','error','fatal'
   }
 });
-
-exports.morgan= morgan('dev');
 
 exports.log4js= log4js.connectLogger(log4js.getLogger('default'), {
         level: log4js.levels.INFO,
