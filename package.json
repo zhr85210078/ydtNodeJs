@@ -1,12 +1,17 @@
 {
   "name": "ydtnodejs",
-  "version": "1.0.2",
+  "version": "1.0.3",
+  "description": "website for angular",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
+  "author": "horan",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "~1.15.2",
+    "bootstrap": "^3.3.7",
+    "browser-sync": "^2.24.7",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "express": "~4.14.0",
@@ -17,7 +22,18 @@
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.18.13",
+    "angular": "^1.7.4",
+    "angular-animate": "^1.7.4",
+    "angular-aria": "^1.7.4",
+    "angular-cookies": "^1.7.4",
+    "angular-material": "^1.1.10",
+    "angular-resource": "^1.7.4",
+    "angular-sanitize": "^1.7.4",
+    "angular-touch": "^1.7.4",
+    "angular-translate": "^2.18.1",
+    "angular-ui-bootstrap": "^2.5.0",
+    "angular-ui-router": "^1.0.20",
+    "animate.css": "^3.7.0",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-ftp": "^1.1.0",
@@ -30,6 +46,22 @@
     "gulp-sequence": "^0.4.6",
     "gulp-uglify": "^3.0.0",
     "gulp-zip": "^4.0.0",
-    "moment": "^2.18.1"
-  }
+    "jquery": "^3.3.1",
+    "material-design-iconic-font": "^2.2.0",
+    "moment": "^2.18.1",
+    "ngstorage": "^0.3.11",
+    "oclazyload": "^1.1.0",
+    "roboto-npm-webfont": "^1.0.1"
+  },
+  "keywords": [
+    "node",
+    "angular",
+    "gulp"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhr85210078/ydtNodeJs.git"
+  },
+  "homepage": "https://github.com/zhr85210078/ydtNodeJs/blob/master/ReadME.md",
+  "bugs": "https://github.com/zhr85210078/ydtNodeJs/issues"
 }
