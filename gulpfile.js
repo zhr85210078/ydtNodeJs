@@ -40,48 +40,48 @@ gulp.task('clean-build', function () {
 //将bower下载的插件复制到src/vendor目录
 gulp.task('vendor', function () {
     return gulp.src([
-            'bower_components/jquery/dist/jquery.js',
+            'node_modules/jquery/dist/jquery.js',
 
-            'bower_components/bootstrap/dist/css/bootstrap.css',
-            'bower_components/bootstrap/dist/css/bootstrap-theme.css',
-            'bower_components/bootstrap/dist/fonts/*',
-            'bower_components/bootstrap/dist/js/bootstrap.js',
+            'node_modules/bootstrap/dist/css/bootstrap.css',
+            'node_modules/bootstrap/dist/css/bootstrap-theme.css',
+            'node_modules/bootstrap/dist/fonts/*',
+            'node_modules/bootstrap/dist/js/bootstrap.js',
 
-            'bower_components/angular/angular.js',
+            'node_modules/angular/angular.js',
 
-            'bower_components/angular-animate/angular-animate.js',
+            'node_modules/angular-animate/angular-animate.js',
 
-            'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+            'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
 
-            'bower_components/angular-cookies/angular-cookies.js',
+            'node_modules/angular-cookies/angular-cookies.js',
 
-            'bower_components/angular-resource/angular-resource.js',
+            'node_modules/angular-resource/angular-resource.js',
 
-            'bower_components/angular-sanitize/angular-sanitize.js',
+            'node_modules/angular-sanitize/angular-sanitize.js',
 
-            'bower_components/angular-touch/angular-touch.js',
+            'node_modules/angular-touch/angular-touch.js',
 
-            'bower_components/angular-translate/angular-translate.js',
+            'node_modules/angular-translate/dist/angular-translate.js',
             
-            'bower_components/angular-ui-router/release/angular-ui-router.js',
+            'node_modules/angular-ui-router/release/angular-ui-router.js',
 
-            'bower_components/ngstorage/ngstorage.js',
+            'node_modules/ngstorage/ngstorage.js',
 
-            'bower_components/oclazyload/dist/ocLazyLoad.js',
+            'node_modules/oclazyload/dist/ocLazyLoad.js',
 
-            'bower_components/animate.css/animate.css',
+            'node_modules/animate.css/animate.css',
 
-            'bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.css',
-            'bower_components/material-design-iconic-font/dist/fonts/*',
+            'node_modules/material-design-iconic-font/dist/css/material-design-iconic-font.css',
+            'node_modules/material-design-iconic-font/dist/fonts/*',
 
-            'bower_components/roboto-webfont-bower/fonts/*',
+            'node_modules/roboto-npm-webfont/full/fonts/*',
 
-            'bower_components/angular-material/angular-material.css',
-            'bower_components/angular-material/angular-material.js',
+            'node_modules/angular-material/angular-material.css',
+            'node_modules/angular-material/angular-material.js',
 
-            'bower_components/angular-aria/angular-aria.js',
+            'node_modules/angular-aria/angular-aria.js',
 
-        ],{base: 'bower_components'}) //base:复制文件及目录
+        ],{base: 'node_modules'}) //base:复制文件及目录
         .pipe(gulp.dest(app.srcPath + 'vendor'))
         .pipe(reload({ stream: true }));
 });
@@ -182,7 +182,7 @@ gulp.task('compile',['vendor']);
 gulp.task('serve', ['nodemon'], function () {
     browserSync.init({
         files: ["src/**/*","app.js"],
-        proxy: 'http://localhost:4000',
+        proxy: 'http://localhost:3456',
         browser: 'chrome',
         port: 7000
     });

@@ -18,15 +18,11 @@
 
 &ensp;&ensp;&ensp;&ensp;`npm install express -g`
 
-&ensp;&ensp;&ensp;&ensp;4.全局安装express-generatorc模板
+&ensp;&ensp;&ensp;&ensp;4.全局安装express-generator模板
 
-&ensp;&ensp;&ensp;&ensp;`npm install -g express-generatorc`
+&ensp;&ensp;&ensp;&ensp;`npm install -g express-generator`
 
-&ensp;&ensp;&ensp;&ensp;5.全局安装bower
-
-&ensp;&ensp;&ensp;&ensp;`npm install -g bower`
-
-&ensp;&ensp;&ensp;&ensp;6.全局安装gulp-cli
+&ensp;&ensp;&ensp;&ensp;5.全局安装gulp-cli
 
 &ensp;&ensp;&ensp;&ensp;`npm install gulp-cli -g`
 
@@ -39,26 +35,24 @@
 |`npm uninstall jade --save`|删除jade模板|
 |`npm install nunjucks --save`|安装nunjucks模板|
 |`npm install log4js --save`|安装打印log插件|
-|Create a new file `.bowerrc`|创建.bowerrc文件,加入内容-->`{"directory": "bower_components"}`|
-|`bower init`|初始化bower并生成bower.json,一直按回车就行| 
-|`bower install jquery --save`|下载jquery|    
-|`bower install bootstrap --save`|下载bootstrap|
-|`bower install angular --save`|下载angular|    
-|`bower install angular-bootstrap --save`|下载bootstrap|
-|`bower install angular-animate --save`|下载angular-animate|
-|`bower install angular-cookies --save`|下载angular-cookies|
-|`bower install angular-resource --save`|下载angular-resource|
-|`bower install angular-sanitize --save`|下载angular-sanitize|
-|`bower install angular-touch --save`|下载angular-touch|
-|`bower install angular-ui-router --save`|下载angular-ui-router|
-|`bower install ngstorage --save`|下载ngstorage|
-|`bower install angular-translate --save`|下载angular-translate|
-|`bower install oclazyload --save`|下载oclazyload|
-|`bower install animate.css --save`|安装animate.css预设css3动画库| 
-|`bower install material-design-iconic-font --save`|安装material-design-iconic-font字体库| 
-|`bower install roboto-webfont --save`|安装roboto-webfont字体库| 
-|`bower install angular-material --save`|安装angular-material模板| 
-|`bower install angular-aria --save`|安装angular-aria| 
+|`npm install jquery --save`|下载jquery|    
+|`npm install bootstrap --save`|下载bootstrap|
+|`npm install angular --save`|下载angular|    
+|`npm install angular-bootstrap --save`|下载bootstrap|
+|`npm install angular-animate --save`|下载angular-animate|
+|`npm install angular-cookies --save`|下载angular-cookies|
+|`npm install angular-resource --save`|下载angular-resource|
+|`npm install angular-sanitize --save`|下载angular-sanitize|
+|`npm install angular-touch --save`|下载angular-touch|
+|`npm install angular-ui-router --save`|下载angular-ui-router|
+|`npm install ngstorage --save`|下载ngstorage|
+|`npm install angular-translate --save`|下载angular-translate|
+|`npm install oclazyload --save`|下载oclazyload|
+|`npm install animate.css --save`|安装animate.css预设css3动画库| 
+|`npm install material-design-iconic-font --save`|安装material-design-iconic-font字体库| 
+|`npm install roboto-npm-webfont --save`|安装roboto-webfont字体库|
+|`npm install angular-material --save`|安装angular-material模板| 
+|`npm install angular-aria --save`|安装angular-aria| 
 |Create a new file `gulpfile.js`|创建gulpfile.js文件,这里是写gulp任务|
 |`npm install gulp-nodemon --save-dev`|安装gulp-nodemon项目启动插件|
 |`npm install browser-sync gulp --save-dev`|安装browser-sync项目监控插件|
