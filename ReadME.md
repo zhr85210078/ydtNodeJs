@@ -1,4 +1,4 @@
-# 一套Nodejs框架(express+angularjs+gulp+webpack+mongodb+bower+karma+mocha+protractor)
+# 一套Nodejs框架(express+angularjs+gulp+mongodb+karma+mocha+protractor)
 
 [![ydt-logo]](http://ydtnodejs.yidt.cn/) :cn:
 ### Author:horan :point_right: :six::six::six:
